@@ -128,5 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.vscode/
+
 # Key and password files
 client_key.json

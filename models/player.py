@@ -1,4 +1,5 @@
 import json
+from constants.constants import Constants
 from models.predictions import Predictions
 
 from models.standing import Standing
@@ -8,7 +9,7 @@ class Player:
     predictions = None
 
     def __init__(self, given_name, file):
-        self.standing = Standing(given_name, file.worksheet("Classificação Geral"))
+        self.standing = Standing(given_name, file.worksheet(Constants.SUMMARY_PAGE))
         self.predictions = Predictions(file.worksheet(given_name))
 
     def toJSON(self):

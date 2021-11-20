@@ -1,6 +1,6 @@
 
+from constants.constants import Constants
 from services.scoreParser import ScoreParser
 
 #Update their score
-players = ["Adalba", "Lemão", "Manolo", "Pai", "Rafa", "Wilton"]
-ScoreParser("BolaoCapivara2021").parse(players, "Semana 10")
+ScoreParser(Constants.SHEET_NAME).parse(Constants.PLAYERS, "Semana 10")

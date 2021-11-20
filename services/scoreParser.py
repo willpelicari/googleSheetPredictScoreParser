@@ -1,3 +1,4 @@
+from constants.constants import Constants
 from models.player import Player
 from models.predictions import Predictions
 from sheet_manager import authorize, get_document
@@ -8,7 +9,7 @@ class ScoreParser:
         self.document = get_document(authorize(), documentName)
 
     def parse(self, players, roundName):
-        results = Predictions(self.document.worksheet("Resultados Oficiais"))
+        results = Predictions(self.document.worksheet(Constants.RESULTS_PAGE))
 
         for playerName in players:
             player = Player(playerName, self.document)
